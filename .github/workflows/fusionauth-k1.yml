@@ -1,0 +1,43 @@
+name: Isolated FusionAuth K1 (manual only)
+on:
+  workflow_dispatch:
+    inputs:
+      reviewed_sha:
+        description: Exact public commit reviewed for publication safety
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: isolated-fusionauth-proof
+  cancel-in-progress: false
+jobs:
+  k1:
+    if: github.repository == 'yacarex/frida-auth-proof' && github.event.repository.private == false && inputs.reviewed_sha == github.sha
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16.6-bookworm@sha256:557fea37a744d5f4c8faab304b0a90858b53ab119735a88c131fd19dab802f36
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+        options: >-
+          --log-driver none
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      PROOF_POSTGRES_ID: ${{ job.services.postgres.id }}
+    steps:
+      - name: Checkout public proof only
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify reviewed public payload
+        run: python3 harness/audit_public.py
+      - name: K1 only, isolated AS and transport evidence
+        run: python3 harness/runner.py
+      - name: Cleanup even after failure
+        if: always()
+        run: python3 harness/runner.py cleanup

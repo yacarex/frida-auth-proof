@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "runtime": "NOT_RUN",
+  "files": [
+    {
+      "path": ".github/workflows/fusionauth-k1.yml",
+      "bytes": 1428,
+      "sha256": "7ff47c5730a59dd82d8c938e94754c68dac95ddbb40c842c00bf6fff4a7a7221"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 74,
+      "sha256": "a65f41e6000a22ffff9bc9442f321ca9c8ab21cd996f2850ed10ffdc9ab92372"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5197,
+      "sha256": "86d320425e165856041ba31e5b360f3fe1e7d119e0e540852941e38a12c69700"
+    },
+    {
+      "path": "docs/HARNESS_PLAN.md",
+      "bytes": 8110,
+      "sha256": "e4a60f652c93eca2c3bc9476b65f21a3df42b27698ee45bce54bb63e6169a412"
+    },
+    {
+      "path": "docs/KNOCKOUT_PROFILE.md",
+      "bytes": 7411,
+      "sha256": "dc79e99f4b507fce5422fc957ad0b2a86c044671ee0760af97ae94b7a0ad19ca"
+    },
+    {
+      "path": "docs/NORMATIVE_MATRIX.md",
+      "bytes": 17864,
+      "sha256": "0d2696f6ac7a96263d508fc4a75558a6647f74b9f82a0038c0906dcb55f41e36"
+    },
+    {
+      "path": "docs/SAFETY_REVIEW.md",
+      "bytes": 4209,
+      "sha256": "9cecc4340cd67b457b4fc3d89551fa6ebe6777647d26243228fe217e5000a9b9"
+    },
+    {
+      "path": "harness/audit_public.py",
+      "bytes": 2127,
+      "sha256": "3bc66a173772bc42164dcda8e62eca51feadd137551048ad60c9610eeec0c8aa"
+    },
+    {
+      "path": "harness/k1.py",
+      "bytes": 12055,
+      "sha256": "7041ec78d11fb5be00259483249dfdc17a4958927f1f282458527e110ab240c8"
+    },
+    {
+      "path": "harness/runner.py",
+      "bytes": 4102,
+      "sha256": "8ddd0597453cbc13a358a8e6cae7340cc68eb115082f058124ab97e467f6913d"
+    },
+    {
+      "path": "harness/setup.py",
+      "bytes": 3851,
+      "sha256": "4536cc48e650153188b9483c80dcfef2ebc464b9cc28ceeb78fb154c94ecdc4e"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 690,
+      "sha256": "3a3dfc59551ce077548164b40a2e452bd8bf6cf8a437fdb6ecffe90f4ae81120"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 233,
+      "sha256": "fdbd48f341636c3241144fef4c1c2bc49c8c43136300121d001e14ff28e2e39a"
+    }
+  ]
+}

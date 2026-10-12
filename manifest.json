@@ -1,0 +1,19 @@
+{
+  "candidate": "FusionAuth 1.69.3",
+  "profile": "O20-PKCE",
+  "profile_commit": "3876790011fe9b638ad9fa0149ff068504098a3f",
+  "prior_evidence_commit": "3d389ffcc254a76edf551d4602533cf266043d2e",
+  "images": {
+    "fusionauth": "fusionauth/fusionauth-app:1.69.3@sha256:6bd6b5646423ebe021a3d457808b053c2c70437cc36ef211afd8a917f96b9b24",
+    "postgres": "postgres:16.6-bookworm@sha256:557fea37a744d5f4c8faab304b0a90858b53ab119735a88c131fd19dab802f36"
+  },
+  "targets": {
+    "code_seconds": 60,
+    "access_seconds": 300,
+    "refresh_idle_minutes": 10080,
+    "refresh_absolute_minutes": 43200,
+    "grace_seconds": 0
+  },
+  "new_auth_capabilities": "OFF",
+  "runtime_status": "NOT_RUN"
+}
