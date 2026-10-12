@@ -1,8 +1,8 @@
 # Isolated FusionAuth proof — publication candidate
 
 Intended repository: `yacarex/frida-auth-proof`, PUBLIC. This is not Frida source.
-State: **FUSIONAUTH PROOF BLOCKED — repository creation/access required**.
-No public commit exists for this package yet. No runner or Auth test has run.
+State: dependency remediation candidate; exact public commit/readback is recorded in the delivery.
+No Actions, FusionAuth or K1 has run in this remediation. Prior diagnostic commits are retained.
 
 ## Frozen contract
 
@@ -60,12 +60,20 @@ No HTML, request dumps, browser traces, raw token responses or container logs.
 HTTP errors/timeouts/unrecognized login pages produce BLOCKED, not a fake PASS.
 Malformed negative responses do not erase evidence that a token was issued.
 
-Dependency versions are proposed exact pins using the prior isolated Python
-inventory plus OAuthlib. This candidate has only syntax/static review: dependency
-installation, isolated audit, AS startup and functional checks are NOT_RUN.
-Runtime dependency audit must be completed before accepting the executable
-candidate; publication safety is a separate gate. Do not assume old dependency
-evidence covers a new graph. No dependency from the private Frida tree is changed.
+Dependency-only controls are documented in [remediation](docs/DEPENDENCY_REMEDIATION_20261012.md).
+`requirements.txt` records the 13 application pins; `requirements.lock` additionally
+pins installation tooling. `dependency-artifacts.json` selects one exact wheel/hash
+per distribution for CPython 3.12, Linux x86_64/glibc >=2.34 (Ubuntu 24.04).
+`harness/install_dependencies.py <fresh-private-directory>` downloads only these
+wheels, verifies SHA-256 before execution, creates a venv without bundled pip and
+installs offline with `--require-hashes`. It then checks the full installed graph,
+installed payload bytes against the wheels, `pip check`, live release-specific
+PyPI/OSV advisories (zero active findings), and offline API/import compatibility.
+All controls finish before fixture generation or FusionAuth startup. Missing data,
+network failure, hash/graph mismatch, advisory or incompatible API is BLOCKED.
+The audit is a Python-distribution advisory audit, not a container/OS scan or a
+guarantee against unpublished vulnerabilities. It has no exceptions or allowlists.
+No changes to the private Frida graph or its separate security hold.
 
 ## Cleanup
 
@@ -80,9 +88,8 @@ No Docker-wide prune, production resource or remote Frida write.
 
 ## Remaining limits
 
-No public readback or public SHA can be accredited before repository creation.
-Connection cannot create repositories or dispatch workflows. Manual dispatch
-may be required later; do not dispatch before the publication gate report.
+Direction will dispatch manually only after approving the new reviewed SHA.
+This remediation does not authorize Actions or K1. No dispatch permission requested.
 The K1 HTTP form driver is not browser/Android proof. Unclassified AS error HTML
 is explicitly inconclusive and may require a narrowly scoped observer correction.
 No external license/account is acquired. If the AS requires one, stop before it.

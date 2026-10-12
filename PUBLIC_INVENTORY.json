@@ -14,13 +14,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 5197,
-      "sha256": "86d320425e165856041ba31e5b360f3fe1e7d119e0e540852941e38a12c69700"
+      "bytes": 5843,
+      "sha256": "99d8c7a952940d0012de4a257589d799721948538def52aef5859df57c46a98c"
+    },
+    {
+      "path": "dependency-artifacts.json",
+      "bytes": 8775,
+      "sha256": "dcef49cf9a305a75a4c080a9e152cd2efc1ed5dbeec4bb45e21b3d09bb414e98"
     },
     {
       "path": "docs/DEPENDENCY_GATE_BLOCK_20261012.md",
       "bytes": 4367,
       "sha256": "981dc77c1da975863b640992c4b54515b361ae6b3dceb308e18e98e53bb6f600"
+    },
+    {
+      "path": "docs/DEPENDENCY_REMEDIATION_20261012.md",
+      "bytes": 6507,
+      "sha256": "281dcfcc0776c74f525666d9717d4e5226711221d7da1de5f460556a7eda75b8"
     },
     {
       "path": "docs/HARNESS_PLAN.md",
@@ -39,8 +49,8 @@
     },
     {
       "path": "docs/SAFETY_REVIEW.md",
-      "bytes": 4209,
-      "sha256": "9cecc4340cd67b457b4fc3d89551fa6ebe6777647d26243228fe217e5000a9b9"
+      "bytes": 5314,
+      "sha256": "ec9b3c16a9ab8f2a5d73090689cda81ad9307bb2579c38c25212249d2019ce2d"
     },
     {
       "path": "evidence/dependency-advisories-20261012.json",
@@ -48,9 +58,29 @@
       "sha256": "b779682beddfad85907554d025cce3dca5a06391c04f9507050f7ab4ea83b9ca"
     },
     {
+      "path": "evidence/dependency-remediation-20261012.json",
+      "bytes": 5796,
+      "sha256": "b07c5f9ff671d825fe99567a3fdde3b88a2707d963fd8546db9b576d96ed8c23"
+    },
+    {
       "path": "harness/audit_public.py",
       "bytes": 2127,
       "sha256": "3bc66a173772bc42164dcda8e62eca51feadd137551048ad60c9610eeec0c8aa"
+    },
+    {
+      "path": "harness/dependency_compatibility.py",
+      "bytes": 2910,
+      "sha256": "adf15fe1b1d22431a3e4c0ddecd1c228e22a61bd9fdd870b967fd0235beb519d"
+    },
+    {
+      "path": "harness/dependency_gate.py",
+      "bytes": 3649,
+      "sha256": "e1e5532de3bb8a6dd3af8c47c18c734ec4fe392a01b0fa3ded450d67600586c3"
+    },
+    {
+      "path": "harness/install_dependencies.py",
+      "bytes": 2066,
+      "sha256": "0112084e5c3f1a35919014bcf45ce440dfa30cbd8a2dd238f09465df307dce2c"
     },
     {
       "path": "harness/k1.py",
@@ -59,8 +89,8 @@
     },
     {
       "path": "harness/runner.py",
-      "bytes": 4102,
-      "sha256": "8ddd0597453cbc13a358a8e6cae7340cc68eb115082f058124ab97e467f6913d"
+      "bytes": 4140,
+      "sha256": "3446ea8555442bdda3bec01b37400e668d1aa4f6096bef530c181c31e442c6c4"
     },
     {
       "path": "harness/setup.py",
@@ -68,14 +98,24 @@
       "sha256": "4536cc48e650153188b9483c80dcfef2ebc464b9cc28ceeb78fb154c94ecdc4e"
     },
     {
+      "path": "harness/test_dependency_gate.py",
+      "bytes": 2091,
+      "sha256": "f08e9a8af9d7c52c8e486126e210b6ff7e19e1f6a067746534bce7173939c3dd"
+    },
+    {
       "path": "manifest.json",
       "bytes": 690,
       "sha256": "3a3dfc59551ce077548164b40a2e452bd8bf6cf8a437fdb6ecffe90f4ae81120"
     },
     {
+      "path": "requirements.lock",
+      "bytes": 1351,
+      "sha256": "9434e7ac3bd641c57b5d06cf49199b741721695b6c6d7c2fc77561865d18813b"
+    },
+    {
       "path": "requirements.txt",
       "bytes": 233,
-      "sha256": "fdbd48f341636c3241144fef4c1c2bc49c8c43136300121d001e14ff28e2e39a"
+      "sha256": "791cd5c76c5f30098ac97ce2ec11dd8e8a5d563bc434da8a696bf8a708ba01eb"
     }
   ]
 }

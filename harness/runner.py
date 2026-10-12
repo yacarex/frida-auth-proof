@@ -47,11 +47,11 @@ def run():
     # independently denies every destination except 127.0.0.1:9011.
     env = dict(os.environ, PROOF_PRIVATE=str(PRIVATE), PIP_DISABLE_PIP_VERSION_CHECK='1',
                OAUTHLIB_INSECURE_TRANSPORT='1')
-    command([sys.executable, '-m', 'venv', str(PRIVATE / 'venv')])
+    # This dependency-only barrier prints allowlisted audit/integrity results.
+    # Failure prevents fixture creation, FusionAuth startup and every K1 request.
+    subprocess.run([sys.executable, str(ROOT / 'harness/install_dependencies.py'),
+                    str(PRIVATE)], check=True, timeout=300, stderr=subprocess.DEVNULL)
     py = str(PRIVATE / 'venv/bin/python')
-    # No install output reaches public logs. Exact version set, no Frida deps.
-    command([py, '-m', 'pip', 'install', '--no-cache-dir', '--only-binary=:all:',
-             '-r', str(ROOT / 'requirements.txt')], timeout=180)
     command([py, str(ROOT / 'harness/setup.py')], env=env)
     image = manifest['images']['fusionauth']
     command(['docker', 'pull', image], timeout=180)

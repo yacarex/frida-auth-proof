@@ -1,0 +1,152 @@
+{
+  "time_utc": "2026-10-12T11:41:47.094490+00:00",
+  "base_commit": "fc7c89e1b177632ca396a9afc4ada65d9fc96bf2",
+  "python": "3.12.14",
+  "clean_install": "PASS",
+  "installation": "fresh venv --without-pip; verified pip wheel; offline --require-hashes wheel-only installation",
+  "audit": {
+    "K1": "NOT_RUN",
+    "audit_source": "PyPI release-specific OSV feed",
+    "dependency_consistency": "PASS",
+    "findings": 0,
+    "installed_payload_files_verified": 878,
+    "packages": [
+      {
+        "active_advisories": [],
+        "metadata_sha256": "f3e1e584630f533cb8c437ca7715a05ba5dac7fcd4d6b0b36359d1325b494d9f",
+        "name": "beautifulsoup4",
+        "source": "https://pypi.org/pypi/beautifulsoup4/4.14.2/json",
+        "version": "4.14.2"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "c6fe912677e373608eab51e324946005998faeb0fa999e6ddada24676e3556d3",
+        "name": "certifi",
+        "source": "https://pypi.org/pypi/certifi/2026.7.22/json",
+        "version": "2026.7.22"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "2255e530e3f80593a354e3d84a29966924d0e10309d1e3a6d50f845ab7d8df66",
+        "name": "cffi",
+        "source": "https://pypi.org/pypi/cffi/2.1.1/json",
+        "version": "2.1.1"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "9fda300857ae6a0486b4cd2d2fec7817ed2d45657249a6dfc0c2bbd1a44267b6",
+        "name": "charset-normalizer",
+        "source": "https://pypi.org/pypi/charset-normalizer/3.5.2/json",
+        "version": "3.5.2"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "4cb03a11a6a704310e9aab006acf6d4946c1543f0f8410d7188b90ec1e17f03d",
+        "name": "cryptography",
+        "source": "https://pypi.org/pypi/cryptography/50.0.0/json",
+        "version": "50.0.0"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "e7cbd26e23ce60f6cb3a151d2adf3b1b087bb8f10ac2d9d6db70fdccbf3bb041",
+        "name": "idna",
+        "source": "https://pypi.org/pypi/idna/3.20/json",
+        "version": "3.20"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "d8ea69403cf94b7197eaebaa62ba80f881e81ac60cf3d9d2b8bc03e076debe3e",
+        "name": "oauthlib",
+        "source": "https://pypi.org/pypi/oauthlib/4.0.0/json",
+        "version": "4.0.0"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "4f5abeb5acacd5eaaad5e6982f5721dee3592795e59fc5a4067fcca92eed70e1",
+        "name": "pip",
+        "source": "https://pypi.org/pypi/pip/26.2.1/json",
+        "version": "26.2.1"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "ad74b2f9994f58a0dd123a9df91e06c9ed66045bf566c4608136873cbf464fc3",
+        "name": "pycparser",
+        "source": "https://pypi.org/pypi/pycparser/3.11/json",
+        "version": "3.11"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "d7d239d115c9442eed19860676c23a4132a38a3880d5722da57fe2e0bd80f570",
+        "name": "pyjwt",
+        "source": "https://pypi.org/pypi/pyjwt/2.15.0/json",
+        "version": "2.15.0"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "f3b8c020d62a23207f4d001d74d86592f58ab40fabb71e0773d36c06e311d18d",
+        "name": "requests",
+        "source": "https://pypi.org/pypi/requests/2.33.0/json",
+        "version": "2.33.0"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "b1dcebbf7d443f7dad84300362e93e28f266206cd32747bef3145adaf6834ef9",
+        "name": "soupsieve",
+        "source": "https://pypi.org/pypi/soupsieve/3.0.1/json",
+        "version": "3.0.1"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "2140da00d62dde967f52d0be0ae28444f1d6a3fe603f52c83c23988c32122d5a",
+        "name": "typing-extensions",
+        "source": "https://pypi.org/pypi/typing-extensions/4.16.0/json",
+        "version": "4.16.0"
+      },
+      {
+        "active_advisories": [],
+        "metadata_sha256": "5315e7401db3cacccd0c2ce5daf81f752a9cc3614b18c37f2b79930b7159ce2f",
+        "name": "urllib3",
+        "source": "https://pypi.org/pypi/urllib3/2.8.0/json",
+        "version": "2.8.0"
+      }
+    ],
+    "scope": "complete installed Python distribution graph, including pip",
+    "wheel_sha256": "PASS"
+  },
+  "compatibility": {
+    "dependency_imports": "PASS",
+    "oauthlib_client_API": "PASS",
+    "requests_preparation": "PASS",
+    "html_parser_selector": "PASS",
+    "PyJWT_RS256_JWK": "PASS",
+    "harness_import": "PASS",
+    "AS_requests": 0,
+    "K1": "NOT_RUN"
+  },
+  "unchanged_sha256": {
+    "harness/k1.py": "7041ec78d11fb5be00259483249dfdc17a4958927f1f282458527e110ab240c8",
+    "harness/setup.py": "4536cc48e650153188b9483c80dcfef2ebc464b9cc28ceeb78fb154c94ecdc4e",
+    "docs/NORMATIVE_MATRIX.md": "0d2696f6ac7a96263d508fc4a75558a6647f74b9f82a0038c0906dcb55f41e36",
+    "docs/KNOCKOUT_PROFILE.md": "dc79e99f4b507fce5422fc957ad0b2a86c044671ee0760af97ae94b7a0ad19ca",
+    "docs/HARNESS_PLAN.md": "e4a60f652c93eca2c3bc9476b65f21a3df42b27698ee45bce54bb63e6169a412",
+    ".github/workflows/fusionauth-k1.yml": "7ff47c5730a59dd82d8c938e94754c68dac95ddbb40c842c00bf6fff4a7a7221",
+    "manifest.json": "3a3dfc59551ce077548164b40a2e452bd8bf6cf8a437fdb6ecffe90f4ae81120"
+  },
+  "Actions": "NOT_RUN",
+  "FusionAuth": "NOT_STARTED",
+  "K1": "NOT_RUN",
+  "NEW_AUTH_CAPABILITIES": "OFF",
+  "negative_controls": {
+    "download_hash_mismatch_prevents_install": "PASS",
+    "installed_payload_tampering": "PASS",
+    "audit_outage_fails_closed": "PASS",
+    "any_active_advisory_fails_closed": "PASS",
+    "tests": "4/4"
+  },
+  "syntax": "PASS",
+  "cleanup": {
+    "dependency_venvs_and_wheels_removed": true,
+    "services_created": 0,
+    "external_fixtures_created": 0
+  }
+}

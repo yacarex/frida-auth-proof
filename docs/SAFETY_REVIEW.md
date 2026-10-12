@@ -1,7 +1,7 @@
 # Publication safety review — 2026-10-12 UTC
 
-Publication candidate only; no public repository/readback/remote commit exists
-in this delivery. `PUBLIC_PROOF_REPOSITORY_READY_FOR_K1` is NOT accredited.
+Dependency remediation delta on the public proof repository. Exact commit/readback
+is recorded in the delivery; no Actions/K1 execution is claimed.
 
 ## File-by-file scope
 
@@ -9,7 +9,7 @@ in this delivery. `PUBLIC_PROOF_REPOSITORY_READY_FOR_K1` is NOT accredited.
 |---|---|
 | README.md | Reproduction/gates/limits, no private source or credentials |
 | manifest.json | Candidate/image digests, policy and historical commit identities only |
-| requirements.txt | Exact proposed dependency versions; install/audit NOT_RUN |
+| requirements.txt | Exact application dependency versions; dependency-only evidence recorded separately |
 | .gitignore | Excludes private execution files, traces and dumps |
 | .github/workflows/fusionauth-k1.yml | Sole trigger workflow_dispatch; standard public Ubuntu; read-only contents; no secrets, caches or paid action |
 | harness/setup.py | New synthetic setup; random ephemeral credentials; no hardcoded password/key; no tenant remote write |
@@ -48,9 +48,9 @@ not inspection of account billing or a claim of free productive FusionAuth hosti
 
 ## Explicit remaining gates
 
-- Repository creation/access, public visibility and exact public commit readback.
-- Review of dependency availability/install/audit before starting executable K1.
-  Previous proof never executed this graph; no PASS transferred.
+- Exact new public commit/tree/hash readback before reporting readiness.
+- Dependency install/audit is rerun fail-closed in the manual workflow before K1.
+  Local dependency-only evidence does not constitute a hosted runner/K1 PASS.
 - Static syntax review does not establish Docker startup, login form compatibility,
   code expiry, redirect binding or any OAuth behavior.
 - Workflow dispatch capability: current connector does not expose it; manual
@@ -66,3 +66,20 @@ No services were started during package preparation. No fixtures, tenant or
 external credentials were created. Runner future cleanup destroys all generated
 private material and named containers/volumes. Failure/cancellation still relies
 on GitHub destroying the ephemeral runner; cannot claim that future cleanup ran.
+
+## Remediation delta review
+
+New public files contain only: exact dependency pins/hashes/artifact URLs; dependency
+installer and advisory/integrity gate; offline API smoke checks; advisory version
+matrix; sanitized installed audit and results. The sole modified runtime lifecycle
+is the dependency barrier before fixture creation. K1/setup/specifications/workflow
+remain byte-for-byte unchanged. Synthetic RSA keys/tokens in the offline smoke test
+exist only in memory and are never printed/exported. No vendor wheel binaries,
+raw downloaded metadata, venv, private filesystem paths or historical logs are published.
+
+The dependency auditor uses the documented PyPI release-specific vulnerability
+feed for every installed distribution, including pip. It does not suppress findings.
+The exact wheel is authenticated by the reviewed hash before installation; immutable
+installed payload is compared to that wheel. pip-generated RECORD/pyc/entry-point
+wrappers are distinguished from upstream wheel payload. This is not a signature
+or provenance attestation from the library vendor.
