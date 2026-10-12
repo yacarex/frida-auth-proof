@@ -23,6 +23,11 @@
       "sha256": "dcef49cf9a305a75a4c080a9e152cd2efc1ed5dbeec4bb45e21b3d09bb414e98"
     },
     {
+      "path": "docs/CONFIG_READBACK_DIAGNOSTIC_20261012.md",
+      "bytes": 4546,
+      "sha256": "8e75cfb98988905bf9a95c07bafedb0da0d79212fab92d49a9203b89a521199b"
+    },
+    {
       "path": "docs/DEPENDENCY_GATE_BLOCK_20261012.md",
       "bytes": 4367,
       "sha256": "981dc77c1da975863b640992c4b54515b361ae6b3dceb308e18e98e53bb6f600"
@@ -73,6 +78,11 @@
       "sha256": "3bc66a173772bc42164dcda8e62eca51feadd137551048ad60c9610eeec0c8aa"
     },
     {
+      "path": "harness/config_observer.py",
+      "bytes": 2217,
+      "sha256": "aed4c92ee6293a1556e528fb86dd180f46d476d0f09393e9acbcb14ec9e874e8"
+    },
+    {
       "path": "harness/dependency_compatibility.py",
       "bytes": 2910,
       "sha256": "adf15fe1b1d22431a3e4c0ddecd1c228e22a61bd9fdd870b967fd0235beb519d"
@@ -89,8 +99,8 @@
     },
     {
       "path": "harness/k1.py",
-      "bytes": 12055,
-      "sha256": "7041ec78d11fb5be00259483249dfdc17a4958927f1f282458527e110ab240c8"
+      "bytes": 12277,
+      "sha256": "567e73bc90d280a596148fac371dfa42fef33cc88ed84e5f99f564a73192abad"
     },
     {
       "path": "harness/runner.py",
@@ -101,6 +111,11 @@
       "path": "harness/setup.py",
       "bytes": 3851,
       "sha256": "4536cc48e650153188b9483c80dcfef2ebc464b9cc28ceeb78fb154c94ecdc4e"
+    },
+    {
+      "path": "harness/test_config_observer.py",
+      "bytes": 2405,
+      "sha256": "f13cd4e04220a57e6af50eedf8b5697eec16c3d19dbe0848234837283faa762d"
     },
     {
       "path": "harness/test_dependency_gate.py",

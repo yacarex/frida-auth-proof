@@ -19,6 +19,7 @@ import requests
 from bs4 import BeautifulSoup
 from oauthlib.oauth2 import WebApplicationClient
 from setup import A, B, U, BASE, CLIENT, TENANT, USER, OAUTH, JWT
+from config_observer import observe
 
 class Blocked(Exception):
     pass
@@ -75,9 +76,13 @@ def must(condition, reason):
 def readback(credentials):
     session = Wire('readback')
     session.headers.update({'Authorization': credentials['api_key'], 'X-FusionAuth-TenantId': TENANT})
-    app = session.get(BASE + '/api/application/' + CLIENT)
-    tenant = session.get(BASE + '/api/tenant/' + TENANT)
-    must(app.status_code == tenant.status_code == 200, 'CONFIG_READBACK_HTTP')
+    REPORT['config_readback_http'] = []
+    responses = observe(session, BASE, [
+        ('application', '/api/application/' + CLIENT, 'application', CLIENT),
+        ('tenant', '/api/tenant/' + TENANT, 'tenant', TENANT),
+    ], REPORT['config_readback_http'])
+    must(responses is not None, 'CONFIG_READBACK_HTTP')
+    app, tenant = responses['application'], responses['tenant']
     app = app.json()['application']
     tenant = tenant.json()['tenant']
     for key, value in OAUTH.items():
