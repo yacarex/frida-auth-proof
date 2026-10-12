@@ -18,6 +18,11 @@
       "sha256": "86d320425e165856041ba31e5b360f3fe1e7d119e0e540852941e38a12c69700"
     },
     {
+      "path": "docs/DEPENDENCY_GATE_BLOCK_20261012.md",
+      "bytes": 4367,
+      "sha256": "981dc77c1da975863b640992c4b54515b361ae6b3dceb308e18e98e53bb6f600"
+    },
+    {
       "path": "docs/HARNESS_PLAN.md",
       "bytes": 8110,
       "sha256": "e4a60f652c93eca2c3bc9476b65f21a3df42b27698ee45bce54bb63e6169a412"
@@ -36,6 +41,11 @@
       "path": "docs/SAFETY_REVIEW.md",
       "bytes": 4209,
       "sha256": "9cecc4340cd67b457b4fc3d89551fa6ebe6777647d26243228fe217e5000a9b9"
+    },
+    {
+      "path": "evidence/dependency-advisories-20261012.json",
+      "bytes": 15735,
+      "sha256": "b779682beddfad85907554d025cce3dca5a06391c04f9507050f7ab4ea83b9ca"
     },
     {
       "path": "harness/audit_public.py",
