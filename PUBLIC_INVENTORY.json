@@ -43,6 +43,11 @@
       "sha256": "e4a60f652c93eca2c3bc9476b65f21a3df42b27698ee45bce54bb63e6169a412"
     },
     {
+      "path": "docs/HTTP400_STRUCTURED_REVIEW_20261012.md",
+      "bytes": 5193,
+      "sha256": "50aa7dbb9790a2d8f05b8d85615a0cff86601390a8bfcc7edc3781da8dcf036a"
+    },
+    {
       "path": "docs/KNOCKOUT_PROFILE.md",
       "bytes": 7411,
       "sha256": "dc79e99f4b507fce5422fc957ad0b2a86c044671ee0760af97ae94b7a0ad19ca"
@@ -79,8 +84,8 @@
     },
     {
       "path": "harness/config_observer.py",
-      "bytes": 2217,
-      "sha256": "aed4c92ee6293a1556e528fb86dd180f46d476d0f09393e9acbcb14ec9e874e8"
+      "bytes": 5173,
+      "sha256": "ea3a7b27cbb2d77aa42a5b4db058886ec6e48da1cae6c2289f3f978f6d2b54d6"
     },
     {
       "path": "harness/dependency_compatibility.py",
@@ -114,8 +119,8 @@
     },
     {
       "path": "harness/test_config_observer.py",
-      "bytes": 2405,
-      "sha256": "f13cd4e04220a57e6af50eedf8b5697eec16c3d19dbe0848234837283faa762d"
+      "bytes": 4167,
+      "sha256": "8c05ad5924d4de72cee9c18b2b16bbc917c6c04624ccf431cbf4a52f19252d54"
     },
     {
       "path": "harness/test_dependency_gate.py",

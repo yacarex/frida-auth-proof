@@ -1,7 +1,7 @@
 """Offline observer tests; no server, dependencies, secrets or OAuth cases."""
 import json
 import unittest
-from config_observer import observe
+from config_observer import observe, structured_errors
 
 RESOURCES=[('application','/api/application/synthetic-app','application','synthetic-app'),
            ('tenant','/api/tenant/synthetic-tenant','tenant','synthetic-tenant')]
@@ -34,4 +34,30 @@ class Tests(unittest.TestCase):
         self.assertNotIn(marker,json.dumps(records));self.assertEqual(records[1]['body'],'NON_JSON')
     def test_transport_failure(self):
         records=[];self.assertIsNone(observe(Session([]),'',RESOURCES,records));self.assertEqual(records[0]['category'],'TRANSPORT_ERROR')
+class StructuredErrorsTests(unittest.TestCase):
+    def test_known_code_and_field(self):
+        result=structured_errors({'fieldErrors':{'tenantId':[{'code':'[invalid]tenantId','message':'hidden'}]},
+                                  'generalErrors':[{'code':'[TenantIdRequired]','message':'hidden'}]})
+        self.assertEqual(result['errors'][0]['field'],'tenantId')
+        self.assertEqual(result['errors'][0]['validation_category'],'INVALID_VALUE')
+        self.assertEqual(result['errors'][1]['code'],'[TenantIdRequired]')
+        self.assertTrue(result['field_errors_present'] and result['general_errors_present'])
+        self.assertNotIn('hidden',json.dumps(result))
+    def test_unknown_values_not_serialized(self):
+        marker='SYNTHETIC_SECRET_DO_NOT_EMIT'
+        result=structured_errors({'fieldErrors':{marker:[{'code':marker,'message':marker,'data':marker}]},
+                                  'generalErrors':[{'code':'[invalid]'+marker,'message':marker}]})
+        self.assertNotIn(marker,json.dumps(result))
+        self.assertEqual(result['errors'][0]['code'],'UNREVIEWED_CODE')
+    def test_malformed_types(self):
+        for body in [{'fieldErrors':[],'generalErrors':{}},
+                     {'fieldErrors':{'tenantId':[[],None,{'code':[]}]}},
+                     {'generalErrors':[{'code':{'unsafe':'value'}}]}]:
+            result=structured_errors(body)
+            self.assertLessEqual(len(result['errors']),16)
+    def test_output_bound(self):
+        result=structured_errors({'fieldErrors':{'tenantId':[{'code':'[invalid]tenantId'}]*100},
+                                  'generalErrors':[{'code':'[invalid]'}]*100})
+        self.assertEqual(len(result['errors']),16);self.assertTrue(result['truncated'])
+
 if __name__=='__main__':unittest.main()
