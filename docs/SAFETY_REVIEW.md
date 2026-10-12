@@ -63,8 +63,9 @@ infrastructure/harness ambiguity yields BLOCKED. No threshold/contract relaxed.
 ## Cleanup protection
 
 No services were started during package preparation. No fixtures, tenant or
-external credentials were created. Runner future cleanup destroys all generated
-private material and named containers/volumes. Failure/cancellation still relies
+external credentials were created. Runner future cleanup destroys generated
+private material and its named FusionAuth container/volumes. GitHub Actions owns
+PostgreSQL service/network teardown. Failure/cancellation still relies
 on GitHub destroying the ephemeral runner; cannot claim that future cleanup ran.
 
 ## Remediation delta review
@@ -83,3 +84,10 @@ The exact wheel is authenticated by the reviewed hash before installation; immut
 installed payload is compared to that wheel. pip-generated RECORD/pyc/entry-point
 wrappers are distinguished from upstream wheel payload. This is not a signature
 or provenance attestation from the library vendor.
+
+## Startup correction
+
+See `WORKFLOW_STARTUP_FIX_20261012.md`. Only service-network delivery and
+cleanup ownership changed. PostgreSQL container ID discovery/removal is absent.
+The workflow changes in this correction supersede the prior remediation statement
+that it remained byte-for-byte unchanged; dependency pins and K1 remain unchanged.

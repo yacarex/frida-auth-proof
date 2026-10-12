@@ -27,8 +27,6 @@ jobs:
           --health-interval 5s
           --health-timeout 5s
           --health-retries 20
-    env:
-      PROOF_POSTGRES_ID: ${{ job.services.postgres.id }}
     steps:
       - name: Checkout public proof only
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -37,6 +35,8 @@ jobs:
       - name: Verify reviewed public payload
         run: python3 harness/audit_public.py
       - name: K1 only, isolated AS and transport evidence
+        env:
+          PROOF_SERVICE_NETWORK: ${{ job.services.postgres.network }}
         run: python3 harness/runner.py
       - name: Cleanup even after failure
         if: always()

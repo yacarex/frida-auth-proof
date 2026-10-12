@@ -4,8 +4,8 @@
   "files": [
     {
       "path": ".github/workflows/fusionauth-k1.yml",
-      "bytes": 1428,
-      "sha256": "7ff47c5730a59dd82d8c938e94754c68dac95ddbb40c842c00bf6fff4a7a7221"
+      "bytes": 1445,
+      "sha256": "a274e8dfb6448e6c5c479739b663b75c06526194111f9e3eb0e42a124150e96f"
     },
     {
       "path": ".gitignore",
@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5843,
-      "sha256": "99d8c7a952940d0012de4a257589d799721948538def52aef5859df57c46a98c"
+      "bytes": 6028,
+      "sha256": "6a43f44dbfaf8205d25cfc99b0cbdd9d5f2057b0d9211c7be04f1145bdb67c56"
     },
     {
       "path": "dependency-artifacts.json",
@@ -49,8 +49,13 @@
     },
     {
       "path": "docs/SAFETY_REVIEW.md",
-      "bytes": 5314,
-      "sha256": "ec9b3c16a9ab8f2a5d73090689cda81ad9307bb2579c38c25212249d2019ce2d"
+      "bytes": 5724,
+      "sha256": "559ddb1d6bf09d2e7092db6e7a051e4a075160e3882c6427200c86d11eb03bb6"
+    },
+    {
+      "path": "docs/WORKFLOW_STARTUP_FIX_20261012.md",
+      "bytes": 3073,
+      "sha256": "cfa063cd99de43b49c6118a51a9caeac9ebcce1d5548a811e11b5ec74fc54d91"
     },
     {
       "path": "evidence/dependency-advisories-20261012.json",
@@ -89,8 +94,8 @@
     },
     {
       "path": "harness/runner.py",
-      "bytes": 4140,
-      "sha256": "3446ea8555442bdda3bec01b37400e668d1aa4f6096bef530c181c31e442c6c4"
+      "bytes": 3858,
+      "sha256": "e88181865ac6783d4d0d53a8616f08ad19eba0688af37b7f1dab86221f8c6c99"
     },
     {
       "path": "harness/setup.py",

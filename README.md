@@ -81,8 +81,10 @@ Credentials are randomly generated on the runner and held in a private temporary
 directory. They are not repository secrets. PostgreSQL bootstrap uses trust only
 inside the isolated service network, with no host ports; no persistent/public DB.
 FusionAuth alone exposes loopback port9011. Container logging is disabled.
-Cleanup removes only this run's named container, PostgreSQL service and anonymous
-volumes, plus private files/venv; it reports absence. `finally` and an always step
+Harness cleanup removes only its named FusionAuth container/anonymous volumes
+and private files/venv; it reports their absence. PostgreSQL service and its network
+remain under the native GitHub Actions lifecycle. The harness receives only the
+service network from a step-level context, never the PostgreSQL container ID. `finally` and an always step
 cover failures; GitHub destroys the hosted runner after cancellation/termination.
 No Docker-wide prune, production resource or remote Frida write.
 
